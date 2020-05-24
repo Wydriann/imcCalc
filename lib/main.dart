@@ -45,19 +45,19 @@ void main() {
       double imc = weight / (height * height);
       setState(() {       
       if (imc < 17) {
-        infoTexto = "Muito Abaixo do Peso (${imc.toStringAsPrecision(4)})";
+        infoTexto = "Muito Abaixo do Peso \n IMC: ${imc.toStringAsPrecision(4)})";
       } else if (imc >= 17 && imc <= 18.49) {
-        infoTexto = "Abaixo do peso (${imc.toStringAsPrecision(4)})";
+        infoTexto = "Abaixo do peso \n IMC: ${imc.toStringAsPrecision(4)}";
       } else if (imc >= 18.5 && imc <= 24.99) {
-        infoTexto = "Peso Ideial (${imc.toStringAsPrecision(4)})";
+        infoTexto = "Peso Ideial \n IMC: ${imc.toStringAsPrecision(4)}";
       } else if (imc >= 25 && imc <= 29.99) {
-        infoTexto = "Acima do Peso (${imc.toStringAsPrecision(4)})";
+        infoTexto = "Acima do Peso \n IMC: ${imc.toStringAsPrecision(4)}";
       } else if (imc >= 30 && imc <= 34.99) {
-        infoTexto = "Obesidade I (${imc.toStringAsPrecision(4)})";
+        infoTexto = "Obesidade I \n IMC: ${imc.toStringAsPrecision(4)}";
       } else if (imc >= 35 && imc <= 39.99) {
-        infoTexto = "Obesidade II (Severa) (${imc.toStringAsPrecision(4)})";
+        infoTexto = "Obesidade II (Severa) \n IMC: ${imc.toStringAsPrecision(4)}";
       } else if (imc > 40) {
-        infoTexto = "Obesidade III (Mórbida) (${imc.toStringAsPrecision(4)})";
+        infoTexto = "Obesidade III (Mórbida) \n IMC: ${imc.toStringAsPrecision(4)}";
       }
       },
       );
@@ -68,7 +68,7 @@ void main() {
     Widget build(BuildContext context) {
       return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.blue,
           title: Text("Calculadora de IMC"),
           centerTitle: true,
           actions: <Widget>[
@@ -82,7 +82,7 @@ void main() {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-              Icon(Icons.person_outline, size: 170.0, color: Colors.blue,),
+              Icon(Icons.person_outline, size: 170.0, color: Colors.black,),
               buildTextField("Peso (Kg)", weightController),
               Divider(),
               buildTextField("Altura (cm)", heightController),
@@ -95,7 +95,7 @@ void main() {
                     onPressed: (){
                       _calculate();
                     },
-                    color: Colors.red,
+                    color: Colors.blueGrey,
                   ),
                 ),
               ),
